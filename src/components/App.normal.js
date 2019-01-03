@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 const POSSIBLE_STATES = {
   POSTS: 'POSTS',
-  TODOS: 'TOODS',
+  TODOS: 'TODOS',
 };
 
 class App extends Component {
