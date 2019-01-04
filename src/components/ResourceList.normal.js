@@ -22,7 +22,7 @@ class ResourceList extends Component {
   render() {
     const { resources } = this.state;
     return (
-      <div>{ resources.length }</div>
+      <ul>{ resources.map(res => <li key={res.id}>{res.title}</li>) }</ul>
     )
   }
 }
