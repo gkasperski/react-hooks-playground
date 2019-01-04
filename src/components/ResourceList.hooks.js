@@ -1,11 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { getResource } from "../resources.service";
+import React from "react";
+import { useResources } from "../resources.service";
 
-const ResourceList = ({ resource }) => {
-    const [ resources, setResources ] = useState([]);
-    useEffect(() => {(() => getResource(resource).then(data => setResources(data)))()}, [resource]);
-
-    return <div>{ resources.length }</div>;
-}
+const ResourceList = ({ resource }) => <ul>{ useResources(resource).map(res => <li key={res.id}>{res.title}</li>) }</ul>;
 
 export default ResourceList;
