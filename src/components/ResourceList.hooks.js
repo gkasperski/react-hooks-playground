@@ -3,14 +3,9 @@ import { getResource } from "../resources.service";
 
 const ResourceList = ({ resource }) => {
     const [ resources, setResources ] = useState([]);
-    const updateResources = resource => getResource(resource).then(data => setResources(data));
+    useEffect(() => {(() => getResource(resource).then(data => setResources(data)))()}, [resource]);
 
-    useEffect(() => {
-      updateResources(resource);
-    }, [resource]);
-  
-    return <div>{ resources.length}</div>;
-    
+    return <div>{ resources.length }</div>;
 }
 
 export default ResourceList;
