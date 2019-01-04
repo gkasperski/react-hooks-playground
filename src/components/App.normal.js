@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ResourceList from "./ResourceList.normal";
 
 const POSSIBLE_STATES = {
   POSTS: 'POSTS',
@@ -8,6 +9,7 @@ const POSSIBLE_STATES = {
 class App extends Component {
   state = { resource: POSSIBLE_STATES.POSTS };
 
+
   render() {
     const { resource } = this.state;
     return (
@@ -16,7 +18,7 @@ class App extends Component {
           <button onClick={() => this.setState({ resource: POSSIBLE_STATES.POSTS})}>Posts</button>
           <button onClick={() => this.setState({ resource: POSSIBLE_STATES.TODOS})}>Todos</button>
         </div>
-        { resource }
+        <ResourceList resource={resource}></ResourceList>
       </div>
     );
   }
