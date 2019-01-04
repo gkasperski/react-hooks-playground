@@ -19,7 +19,6 @@ class ResourceList extends Component {
 
   updateResources = resource => getResource(resource).then(data => this.setState({resources: data}));
   
-
   render() {
     const { resources } = this.state;
     return (

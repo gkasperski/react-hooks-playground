@@ -1,22 +1,27 @@
-import React, { useState } from 'react';
+import React, { Component } from 'react';
+import ResourceList from "./ResourceList.hooks";
 
 const POSSIBLE_STATES = {
   POSTS: 'POSTS',
   TODOS: 'TODOS',
 };
 
-const App = () => {
-  const [ resource, setResource ] = useState(POSSIBLE_STATES.POSTS);
+class App extends Component {
+  state = { resource: POSSIBLE_STATES.POSTS };
 
-  return (
-    <div>
+
+  render() {
+    const { resource } = this.state;
+    return (
       <div>
-        <button onClick={() => setResource(POSSIBLE_STATES.POSTS)}>Posts</button>
-        <button onClick={() => setResource(POSSIBLE_STATES.TODOS)}>Todos</button>
+        <div>
+          <button onClick={() => this.setState({ resource: POSSIBLE_STATES.POSTS})}>Posts</button>
+          <button onClick={() => this.setState({ resource: POSSIBLE_STATES.TODOS})}>Todos</button>
+        </div>
+        <ResourceList resource={resource}></ResourceList>
       </div>
-      { resource }
-    </div>
-  );
+    );
+  }
 }
 
 export default App;
