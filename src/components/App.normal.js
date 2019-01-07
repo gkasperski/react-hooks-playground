@@ -9,7 +9,6 @@ const POSSIBLE_STATES = {
 class App extends Component {
   state = { resource: POSSIBLE_STATES.POSTS };
 
-
   render() {
     const { resource } = this.state;
     return (
@@ -23,5 +22,6 @@ class App extends Component {
     );
   }
 }
+
 
 export default App;
